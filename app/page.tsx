@@ -28,12 +28,27 @@ export default function HostelWebsite() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex flex-col">
       {/* Header */}
       <nav className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-lg border-b border-blue-100 rounded-b-xl">
-        <div className="container mx-auto max-w-6xl flex items-center justify-between px-8 py-4">
-          <div className="flex items-center gap-3">
-            <Home className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-extrabold text-gray-900 tracking-tight">Shri Niwas Residency</span>
+        <div className="container mx-auto max-w-6xl flex flex-wrap items-center justify-between px-4 sm:px-6 py-3 md:py-4">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Home className="h-7 w-7 sm:h-8 sm:w-8 text-blue-600" />
+            <span className="text-xl sm:text-2xl font-extrabold text-gray-900 tracking-tight">Shri Niwas Residency</span>
           </div>
-          <div className="flex items-center gap-8">
+          
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button 
+              type="button" 
+              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <Link 
               href="#home" 
               className="text-base font-medium text-gray-700 hover:text-blue-600 transition-colors px-2 py-1 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
@@ -75,20 +90,20 @@ export default function HostelWebsite() {
       </nav>
           
       {/* Hero Section */}
-      <section id="home" className="py-20 md:py-32 bg-gradient-to-br from-blue-100/70 to-white border-b border-blue-100 shadow-sm">
-        <div className="container mx-auto text-center">
+      <section id="home" className="py-16 sm:py-20 md:py-28 lg:py-32 bg-gradient-to-br from-blue-100/70 to-white border-b border-blue-100 shadow-sm">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="max-w-4xl mx-auto">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">Inclusive Rental Living</Badge>
-<h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-  A Safe & Comfortable
-  <span className="text-blue-600 block">Home for Everyone</span>
-</h2>
-<p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-  Whether you're a student, working professional, or family, Shri Niwas Residency provides a secure, modern, and welcoming space for all. Enjoy comfort and community in a place you can truly call home.
-</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Badge className="mb-3 sm:mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100 text-sm sm:text-base">Inclusive Rental Living</Badge>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
+              A Safe & Comfortable
+              <span className="text-blue-600 block mt-2 sm:mt-3">Home for Everyone</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+              Whether you're a student, working professional, or family, Shri Niwas Residency provides a secure, modern, and welcoming space for all. Enjoy comfort and community in a place you can truly call home.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link href="#footer" passHref legacyBehavior>
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
+                <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3">
                   Schedule a Visit
                 </Button>
               </Link>
@@ -96,7 +111,7 @@ export default function HostelWebsite() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-3 bg-transparent"
+                  className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-50 text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 bg-transparent"
                 >
                   View Gallery
                 </Button>
